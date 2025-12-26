@@ -4,7 +4,7 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
-  background: #f8f9fd;
+  background: #fff;
   @media (max-width: 768px) {
     aspect-ratio: 1;
   }
@@ -13,16 +13,27 @@ html {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  overflow-y: hidden;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
 }
 
 .modal img {
   max-width: 90%;
   border-radius: 8px;
+  width: 600px;
 }
 
 .loader-overlay {

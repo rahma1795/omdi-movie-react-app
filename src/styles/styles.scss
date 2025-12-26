@@ -8,7 +8,8 @@ $size: 30px;
   flex-direction: column;
   width: 100%;
   position: relative;
-  background: #f8f9fd;
+  height: 100%;
+  background: #fff;
 
   .page-title {
     font-size: 28px;
@@ -16,12 +17,62 @@ $size: 30px;
     line-height: 1.4;
   }
 
+  .img-wrap {
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+
+    &:before {
+      content: '';
+      background: linear-gradient(to top, #212121 0%, #212121 15%, transparent 50%);
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 1;
+      transition: all 0.2s ease 0s;
+      -webkit-transition: all 0.2s ease 0s;
+      -moz-transition: all 0.2s ease 0s;
+      -ms-transition: all 0.2s ease 0s;
+      -o-transition: all 0.2s ease 0s;
+      top: inherit;
+      border-radius: 12px;
+    }
+
+    .movie-info {
+      position: absolute;
+      margin-top: 25%;
+      width: 21%;
+      color: white;
+
+      div {
+        cursor: pointer;
+        text-align: center;
+        justify-content: center;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        transition: all 0.2s ease;
+        color: rgb(182, 56, 56);
+      }
+    }
+  }
+
   .search-wrapper {
     position: sticky;
     top: 0;
     padding: 12px 0;
     z-index: 100;
-    background: #f8f9fd;
+    background: white;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -55,7 +106,7 @@ $size: 30px;
 }
 
 .details-page {
-  background: #111827;
+  background: linear-gradient(180deg,rgba(17, 24, 39, 1) 37%, rgba(54, 21, 21, 1) 78%);
   color: #fff;
   display: flex;
   gap: 20px;
@@ -63,12 +114,26 @@ $size: 30px;
   justify-content: center;
   overflow-y: hidden;
   height: 100vh;
-
-  .back-button {
+  
+  .breadcrumb {
     position: absolute;
     top: 10px;
     left: 10px;
     cursor: pointer;
+    display: flex;
+    gap: 8px;
+    
+    &-item {
+      &:not(:first-child)::before {
+        content: '/ ';
+      }
+
+      &.active {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 
   .poster {
@@ -91,8 +156,8 @@ $size: 30px;
     margin: 8px 0;
 
     .genre-tag {
-      background-color: #f3f4f6;
-      color: #111827;
+      background-color: rgb(182, 56, 56);
+      color: #fff;
       padding: 4px 10px;
       border-radius: 12px;
       font-size: 12px;

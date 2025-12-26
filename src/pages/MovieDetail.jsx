@@ -30,7 +30,11 @@ export default function MovieDetail() {
 
   return (
     <div className="details-page">
-      <div className="back-button" onClick={() => navigate("/")}>{"<< Back"}</div>
+      <div className="breadcrumb" >
+        <div className="breadcrumb-item active" onClick={() => navigate("/")}>Home</div>
+        <div className="breadcrumb-item">Detail</div>
+      </div>
+      
       <div className="poster">
         <img src={selected?.Poster} alt={selected?.Title} width="300" />
       </div>

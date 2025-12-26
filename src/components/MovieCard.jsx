@@ -9,25 +9,20 @@ export default function MovieCard({ movie }) {
 
   return (
     <div className="movie-card">
-      <div className="poster" onClick={() => hasPoster && setShowModal(true)}>
-        {hasPoster ? (
-          <img
-            src={movie?.Poster}
-            alt={movie?.Title}
-            className="poster-img"
-            onError={(e) => {
-              e.target.style.display = "none";
-              e.target.parentNode.classList.add("poster-error");
-            }}
-          />
-        ) : (
-          <div className="poster-fallback">No Image</div>
-        )}
+      <div
+        className="img-wrap" 
+        style={{backgroundImage: `url(${movie?.Poster})`}}
+        onClick={() => hasPoster && setShowModal(true)}
+      >
+        <div className="movie-info">
+          <div>
+            <h3 onClick={() => navigate(`/movie/${movie?.imdbID}`)}>
+              {movie?.Title}
+            </h3>
+            <p>{movie?.Year}</p>
+          </div>
+        </div>
       </div>
-      <h3 onClick={() => navigate(`/movie/${movie?.imdbID}`)}>
-        {movie?.Title}
-      </h3>
-      <p>{movie?.Year}</p>
 
       {showModal && (
         <MovieModal
