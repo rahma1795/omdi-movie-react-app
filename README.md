@@ -4,20 +4,19 @@ A starter project for building omdb movie application with ReactJs. This project
 ## Installation
 1. **Clone the repository:**
 
-   ```bash
-   git clone <repository-url>
-   cd omdi-movie-react-app
-   ```
+    ```bash
+    git clone <repository-url>
+    cd omdi-movie-react-app
+    ```
 
 2. **Install dependencies:**
-
     ```
     npm install
 
     ```
 
 ## Scripts
-  - **dev: Start the development server with ReactJs.**
+  - **dev: Start the development server with ReactJs version 19.**
     ```
       npm run start
     ```
